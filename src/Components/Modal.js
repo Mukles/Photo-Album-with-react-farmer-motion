@@ -17,12 +17,11 @@ const buttonVeriant = {
 const Modal = ({ layoutId, popUp }) => {
   const selectedImage = images.find((image) => image.id === layoutId);
   return (
-    <div className="modal">
+    <motion.div className="modal">
       <motion.button
         variants={buttonVeriant}
         initial="hidden"
         animate="show"
-        exit={{ opacity: 0, y: -200 }}
         className="icon"
         whileHover={{ rotate: 180 }}
         onClick={() => popUp(selectedImage.id)}
@@ -32,14 +31,15 @@ const Modal = ({ layoutId, popUp }) => {
           className="fa-solid fa-xmark"
         ></motion.i>
       </motion.button>
+
       <div className="modal-image">
         <motion.img
-          src={`${selectedImage.image}`}
           layoutId={selectedImage.id}
+          src={`${selectedImage.image}`}
           alt=""
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

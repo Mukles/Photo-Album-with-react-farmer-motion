@@ -20,14 +20,23 @@ const Gallery = () => {
   return (
     <div className="container">
       <AnimateSharedLayout>
-        <div className="grid-img">
+        <motion.div
+          className="grid-img"
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 4, duration: 0.5 }}
+        >
           {images.map((img, idx) => (
             <div className="image" key={idx} onClick={() => popUp(img.id)}>
               <motion.img layoutId={img.id} src={img.image} alt="" />
+              <div className="content">
+                <h2>Pacific Hotel</h2>
+                <p>Cox's bazar, Chittagong</p>
+              </div>
             </div>
           ))}
-        </div>
-        <AnimatePresence>
+        </motion.div>
+        <AnimatePresence exitBeforeEnter>
           {isModalOpen && <Modal popUp={popUp} layoutId={layoutId} />}
         </AnimatePresence>
       </AnimateSharedLayout>

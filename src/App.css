@@ -2,6 +2,20 @@ img {
   max-width: 500px;
 }
 
+.header h1 {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.header span {
+  background: red;
+  width: 150px;
+  height: 5px;
+  display: block;
+  border-radius: 3px;
+  margin: auto;
+}
+
 .grid-img {
   display: grid;
   padding: 1rem;
@@ -13,6 +27,7 @@ img {
 
 .image {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -20,6 +35,30 @@ img {
   height: 420px;
   margin: auto;
   border-radius: 0.8rem;
+  position: relative;
+}
+
+.image .content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #000000d6;
+  color: white;
+  padding: 0.4rem 0.8rem;
+}
+
+.image .content h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 0 0.4rem 0;
+  padding: 0;
+}
+
+.image .content p {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0 0 0.3rem 0;
 }
 
 .image img {
