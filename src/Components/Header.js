@@ -19,6 +19,13 @@ const Header = () => {
           delay: 2,
         }}
       ></motion.span>
+
+      <div className="search">
+        <input type={"search"} name="search" placeholder="search heare....." />
+        <button className="search-btn">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
     </motion.header>
   );
 };

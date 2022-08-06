@@ -43,7 +43,7 @@ const Gallery = () => {
                 layoutId={img.id}
                 src={img.image}
                 alt=""
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.2, transition: 1 }}
               />
               <div className="content">
                 <h2>Pacific Hotel</h2>
