@@ -1,30 +1,22 @@
 export const images = [
   {
     id: 1,
-    image: "/image/img1.jpg",
+    image: "/image/a.jpg",
   },
   {
     id: 2,
-    image: "/image/img2.jpg",
+    image: "/image/b.jpg",
   },
   {
     id: 3,
-    image: "/image/img3.jpg",
+    image: "/image/c.jpg",
   },
   {
     id: 4,
-    image: "/image/img4.jpg",
+    image: "/image/d.jpg",
   },
   {
     id: 5,
-    image: "/image/img5.jpg",
-  },
-  {
-    id: 6,
-    image: "/image/img6.jpg",
-  },
-  {
-    id: 7,
-    image: "/image/img7.jpg",
+    image: "/image/e.jpg",
   },
 ];

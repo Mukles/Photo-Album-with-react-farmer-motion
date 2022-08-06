@@ -18,25 +18,42 @@ const Gallery = () => {
   };
 
   return (
-    <div className="container">
-      <AnimateSharedLayout>
+    <div className="container" style={{ marginTop: "1rem" }}>
+      <AnimateSharedLayout type="crossfade">
         <motion.div
           className="grid-img"
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 4, duration: 0.5 }}
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 1,
+            duration: 0.5,
+            type: "spring",
+            damping: 15,
+            stiffness: 120,
+          }}
         >
           {images.map((img, idx) => (
-            <div className="image" key={idx} onClick={() => popUp(img.id)}>
-              <motion.img layoutId={img.id} src={img.image} alt="" />
+            <div
+              style={{ cursor: "pointer" }}
+              className="image"
+              key={idx}
+              onClick={() => popUp(img.id)}
+            >
+              <motion.img
+                layoutId={img.id}
+                src={img.image}
+                alt=""
+                whileHover={{ scale: 1.2 }}
+              />
               <div className="content">
                 <h2>Pacific Hotel</h2>
                 <p>Cox's bazar, Chittagong</p>
               </div>
+              <div className="discount">20% OFF</div>
             </div>
           ))}
         </motion.div>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence key={"modal"}>
           {isModalOpen && <Modal popUp={popUp} layoutId={layoutId} />}
         </AnimatePresence>
       </AnimateSharedLayout>
